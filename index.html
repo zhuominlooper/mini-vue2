@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>您好</h2><h2>{{name}}</h2>
+  </div>
+  <script src="dist/vue.js"></script>
+  <script>
+     let vm = new Vue({
+      el: "#app",
+      data () {
+        return {
+          name: 'looper',
+        }
+      }})
+    
+      vm.name='zhuo';
+     
+
+    //   watch: {
+    //     'a.b.c'(newVal,oldVal){
+    //       console.log(333, newVal, oldVal)
+    //     },
+    //   },
+    //   beforeCreate () {
+    //     console.log('beforeCreate')
+    //   },
+    //   created () {
+    //     console.log('create')
+    //   },
+    //   updated () {
+    //     console.log('updated')
+    //   },
+    //   props: []
+    // })
+
+    //批量处理，数据更新多次，只render一次
+    //vue异步实现，数据更新之后，异步更新dom
+    // vm.arr.push(4)
+    // vm.arr.push(5)
+    // vm.arr.push(6)
+    // vm.$nextTick(()=>{
+    //   console.log('用户nextTick',vm.$el.innerHTML)
+    // })
+    //vm.name="zhuo"
+    //console.log('vm', vm)
+    // vm._data.arrObj.push({test2:2})
+    //     console.log('vm', vm)
+  </script>
+
+
+
+
+
+  <script>
+    //vue渲染 =》先初始化数据(initState)=》将模板进行编译变成AST语法树=》变成render()函数=》生成虚拟节点=》变成真实dom=》放到页面
+
+    //vue生命周期原理
+    //1.Vue.mixin({})进行混入,mixin内部采用策略模式
+    //2.设计模式:采用订阅发布模式
+
+    //vue中更新组件的方式：以组件为单位，给每一个组件添加一个watcher，当属性变化时，调用watcher
+    //对象收集依赖：dep和watcher，多对多
+    //数组收集依赖：会调用get，让当前的数组记住这个渲染watcher
+    
+    //diff算法:最小量更新，用虚拟dom进行比对
+
+
+  </script>
+</body>
+
+</html>
